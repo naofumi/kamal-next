@@ -7,7 +7,7 @@ image: naofumik/kamal-next
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.176
+    - 133.167.104.211
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -15,9 +15,10 @@ servers:
 
 # Enable SSL auto certification via Let's Encrypt (and allow for multiple apps on one server).
 # Set ssl: false if using something like Cloudflare to terminate SSL (but keep host!).
-# proxy:
-#   ssl: true
-#   host: app.example.com
+proxy:
+  ssl: true
+  host: kamal-next.castle104.com
+  app_port: 3000
 
 # Credentials for your image host.
 registry:
