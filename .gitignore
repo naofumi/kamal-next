@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -34,4 +35,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# kamal secrets
 .kamal/secrets-common
+
+# storage (sqlite3 db)
+/storage/*
+!/storage/.keep
+
