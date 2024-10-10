@@ -1,3 +1,3 @@
-export async function GET(req: Request, res: Response) {
-  return new Response("I'm OK!", {status: 200})
+export async function GET() {
+  return new Response("I'm Healthy", {status: 200})
 }
