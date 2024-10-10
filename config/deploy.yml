@@ -36,9 +36,9 @@ builder:
 
 # Inject ENV variables into containers (secrets come from .kamal/secrets).
 #
-# env:
-#   clear:
-#     DB_HOST: 192.168.0.2
+env:
+  clear:
+    DATABASE_URL: "file:../storage/production.db"
 #   secret:
 #     - RAILS_MASTER_KEY
 
@@ -55,8 +55,8 @@ builder:
 
 # Use a persistent storage volume.
 #
-# volumes:
-#   - "app_storage:/app/storage"
+volumes:
+  - "kamal_next_storage:/app/storage"
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
 # hitting 404 on in-flight requests. Combines all files from new and old
