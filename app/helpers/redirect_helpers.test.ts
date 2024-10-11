@@ -23,6 +23,12 @@ describe("isSafeRedirect", () => {
     expect(isSafeRedirect("test_path", host)).toBe(true);
   })
 
+  // Confirmed that this will not redirect to "myhost.com"
+  // Instead, it redirected to "/sessions/myhost.com" (processed as relative URL)
+  it ("host without protocol", () => {
+    expect(isSafeRedirect("myhost.com", host)).toBe(true);
+  })
+
   it ("protocol is http and host is same", () => {
     expect(isSafeRedirect("http://myhost.com/test_path", host)).toBe(true);
   })
