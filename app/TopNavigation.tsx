@@ -2,17 +2,7 @@ import {ReactNode} from "react"
 import Link from "next/link"
 import {getCurrentUser} from "@/app/helpers/session_helper"
 import {destroySession} from "@/app/sessions/actions"
-import {revalidatePath} from "next/cache"
-import {redirect} from "next/navigation"
-import {seedAll} from "@/app/repositories/seed"
-
-async function seedAllAction() {
-  "use server"
-
-  await seedAll()
-  revalidatePath("/")
-  redirect("/users")
-}
+import {seedAllAction} from "@/app/actions"
 
 export default async function TopNavigation({children, title, current}: {
   children: ReactNode,
