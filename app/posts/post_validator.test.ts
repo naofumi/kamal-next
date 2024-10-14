@@ -1,11 +1,11 @@
-import {User} from "@prisma/client"
+import {Prisma, User} from "@prisma/client"
 import {createUser, deleteUsers} from "@/app/repositories/user_repository"
-import {deletePosts, PostBody} from "@/app/repositories/post_repository"
+import {deletePosts} from "@/app/repositories/post_repository"
 import {validatePost} from "@/app/posts/post_validator"
 
 describe('validatePost()', () => {
   let author: User
-  let validPost: PostBody
+  let validPost: Prisma.PostCreateWithoutAuthorInput & {authorId: number}
 
   beforeEach(async () => {
     await deletePosts()
