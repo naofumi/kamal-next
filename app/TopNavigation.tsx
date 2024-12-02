@@ -7,7 +7,7 @@ import {seedAllAction} from "@/app/actions"
 export default async function TopNavigation({children, title, current}: {
   children: ReactNode,
   title?: string,
-  current: "home" | "users" | "posts"
+  current: "home" | "users" | "posts" | "customers"
 }) {
   const pageLinks = [
     {url: "/", title: "Home", symbol: "home"},
