@@ -22,3 +22,9 @@ model Post {
   authorId  Int
   author    User    @relation(fields: [authorId], references: [id])
 }
+
+model Customer {
+  id        Int    @id @default(autoincrement())
+  firstName String
+  lastName  String
+}

@@ -1,12 +1,15 @@
 import {prisma} from "@/app/helpers/prisma_helpers"
 import {deleteUsers, getUsers} from "@/app/repositories/user_repository"
 import {deletePosts} from "@/app/repositories/post_repository"
+import {deleteCustomers} from "@/app/repositories/customer_repository"
 
 export async function seedAll() {
   await deletePosts()
   await deleteUsers()
+  await deleteCustomers()
 
   await seedUsers()
+  await seedCustomers()
   await seedPosts1()
   await seedPosts2()
 }
@@ -19,6 +22,18 @@ export async function seedUsers() {
     }, {
       email: "bob@example.com",
       name: "Bob",
+    }]
+  })
+}
+
+export async function seedCustomers() {
+  await prisma.customer.createMany({
+    data: [{
+      firstName: "Sazae",
+      lastName: "Fuguta",
+    }, {
+      firstName: "Katsuo",
+      lastName: "Isono",
     }]
   })
 }

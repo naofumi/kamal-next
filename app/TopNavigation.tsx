@@ -13,6 +13,7 @@ export default async function TopNavigation({children, title, current}: {
     {url: "/", title: "Home", symbol: "home"},
     {url: "/users", title: "Users", symbol: "users"},
     {url: "/posts", title: "Posts", symbol: "posts"},
+    {url: "/customers", title: "Customers", symbol: "customers"},
   ]
   const currentUser = await getCurrentUser()
 
